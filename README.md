@@ -25,7 +25,7 @@ Para mais detalhes sobre as rotas e uso da API, consulte a [documentação ofici
 2. Navegue até o diretório do backend:
 
    ```bash
-   cd planner/backend
+   cd planner-backend #(Caso não tenha trocado o nome da pasta)
    ```
 
 3. Instale as dependências:
