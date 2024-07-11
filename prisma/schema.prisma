@@ -37,8 +37,7 @@ model Participant {
 }
 
 model Activity {
-  id String @id @default(uuid())
-
+  id        String   @id @default(uuid())
   title     String
   occurs_at DateTime
 
@@ -49,8 +48,7 @@ model Activity {
 }
 
 model Link {
-  id String @id @default(uuid())
-
+  id    String @id @default(uuid())
   title String
   url   String
 
