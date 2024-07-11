@@ -9,7 +9,7 @@ Para mais detalhes sobre as rotas e uso da API, consulte a [documentação ofici
 ## Tecnologias Utilizadas
 
 - **Node.js**
-- **Express**
+- **Fastify**
 - **SQLite**
 - **Prisma**
 - **TypeScript**
