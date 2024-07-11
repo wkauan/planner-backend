@@ -1,12 +1,12 @@
-import { FastifyInstance } from "fastify";
-import { ZodTypeProvider } from "fastify-type-provider-zod";
-import { z } from "zod";
-import { prisma } from "../lib/prisma";
-import { ClientError } from "../errors/client-error";
+import type { FastifyInstance } from 'fastify'
+import type { ZodTypeProvider } from 'fastify-type-provider-zod'
+import { z } from 'zod'
+import { prisma } from '../lib/prisma'
+import { ClientError } from '../errors/client-error'
 
 export async function getParticipant(app: FastifyInstance) {
   app.withTypeProvider<ZodTypeProvider>().get(
-    "/participants/:participantId",
+    '/participants/:participantId',
     {
       schema: {
         params: z.object({
@@ -15,7 +15,7 @@ export async function getParticipant(app: FastifyInstance) {
       },
     },
     async (request) => {
-      const { participantId } = request.params;
+      const { participantId } = request.params
 
       const participant = await prisma.participant.findUnique({
         select: {
@@ -25,13 +25,13 @@ export async function getParticipant(app: FastifyInstance) {
           is_confirmed: true,
         },
         where: { id: participantId },
-      });
+      })
 
       if (!participant) {
-        throw new ClientError("Participant not found.");
+        throw new ClientError('Participant not found')
       }
 
-      return { participant };
-    }
-  );
+      return { participant }
+    },
+  )
 }
