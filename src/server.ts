@@ -6,10 +6,11 @@ import {
 } from "fastify-type-provider-zod";
 import { confirmParticipant } from "./routes/confirm-participant";
 import { confirmTrp } from "./routes/confirm-trip";
-import { createTrip } from "./routes/create-trip";
 import { createActivity } from "./routes/create-activity";
-import { getActivities } from "./routes/get-activities";
+import { createInvite } from "./routes/create-invite";
 import { createLink } from "./routes/create-link";
+import { createTrip } from "./routes/create-trip";
+import { getActivities } from "./routes/get-activities";
 import { getLinks } from "./routes/get-links";
 import { getParticipants } from "./routes/get-participants";
 
@@ -30,6 +31,7 @@ app.register(getActivities);
 app.register(createLink);
 app.register(getLinks);
 app.register(getParticipants);
+app.register(createInvite);
 
 app.listen({ port: 3333 }).then(() => {
   console.log("server running!");
